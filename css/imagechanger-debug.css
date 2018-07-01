@@ -1,0 +1,16 @@
+.imagesequence-container
+{
+ background-color: grey;
+}
+.imagesequence-prev
+{
+ background-color: red;
+}
+.imagesequence-next
+{
+ background-color: yellow;
+}
+.imagesequence-image
+{
+ background-color: blue;
+}

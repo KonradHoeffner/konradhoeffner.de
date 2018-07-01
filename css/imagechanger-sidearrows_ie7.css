@@ -1,0 +1,17 @@
+.imagesequence-container
+{
+ max-width:800px;
+}
+.imagesequence-prev
+{
+ width:30px;float:left;padding-top: 20px;
+}
+.imagesequence-next
+{
+ width:30px;float:left;padding-top: 20px;
+}
+.imagesequence-image
+{
+ max-width:740px;float:left;
+}
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html lang="en">
+<head>
+<title>The Evaluation Tool</title>
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="highlight.css">
+<!--<link rel="stylesheet" href="http://html5doctor.com/wp-content/themes/html5doctor2/style.css" media="screen" />-->
+</head>
+<body>
+<header>
+  <hgroup>
+    <h1>The Evaluation Tool</h1>
+    <h2>A Java Program for Evaluating Semantic Web Links</h2>
+  </hgroup>
+</header>
+<section>
+<h2>What is the Evalution Tool?</h2>
+It is a simple java program that supports you in manually evaluating links between ressources of the semantic web.
+Evaluating means that you take a random sample (or all) of a set of links and that you determine for each of those links if they are correct or incorrect.
+<figure>
+<img src="img/screenshot_example_evaluation.png" alt="an example screenshot of the Evaluation Tool"/>
+</figure>
+It can
+<ul>
+ <li>load reference data (the links) as ntriples or alignment format</li>
+ <li>save the evaluated links as ntriples (according to the LATC standards split in positive.nt and negative.nt), alignment format or as tab separated CSV</li>
+ <li>work with geocoordinates, calculate and show geographical distances between the two nodes of a link</li>
+ <li>create a README file with the number of links, sample size, sample precision and date in it</li>
+ <li>show a graph of precision by confidence cutoff which helps you determine the optimal confidence threshold</li>
+</ul>
+Included are also executable classes, scripts and XSLT stylesheets that allow to:
+<ul>
+ <li>determine the amount of ressources with multiple link partners (high link "polygamy" is an indicator of bad link- and/or data quality in sameAs links)</li>
+ <li>convert alignment files to tab separated CSV which helps create random samples</li>
+ <li>convert ntriples files to csv</li>
+ </ul>
+<h3>Motivation</h3>
+One of the core aims of the semantic web is to create useful links between already existing ressources. If you happen to create some of those links, you most probably do it with a tool like Silk that reads in
+a configuration file ("link specification") and can potentially create millions of links out of such a link specification. Before flodding the semantic web with millions of links, it is however a good idea to check if those links are correct in the first place :-) Often those URIs contain large sequences of seemingly random numbers and do not provide enough information to know what the URI represents. Manually creating a random sample and then copy-pasting dozens of URLs into the browser can get tedious however so the Evaluation Tool was created to support the user with that task.  
+<figure>
+<img src="img/screenshot_editor_alignment.png" alt="an excerpt of a big file containing semantic web links in the alignment format"/>
+<figcaption>An examplary link set</figcaption> 
+</figure>
+
+<h3>Disclaimer</h3>
+This program was gradually developed as my own tool to help me in my work and is in no way guaranteed to be bug free or thoroughly optimized for usability or ease of installation.
+Before you implement such a program yourself however, I think just using mine may safe you a lot of time and headache should need the same functionality.
+If you only need to evaluate a small set of links once it may not be worth it as you need quite a lot of stuff to execute it, namely svn, maven and java, but if you use it regularily I'm sure it can save you a lot of work.
+To my knowledge such a tool does not already exist (if there already is please tell me). 
+</section>
+<section>
+<h2>Installation & Execution</h2>
+<h3>Prerequisites</h3>
+First, you need Subversion, Maven 2 or higher and Java 6 or higher. If you don't have them, you can install them in Ubuntu with the following commands (although Subversion and Java should already be preinstalled for most versions):
+<pre><code>sudo apt-get install subversion
+sudo apt-get install maven2
+sudo apt-get install sun-java6-jre</pre></code>
+Note that Maven 3 is already available and backwards compatible so you can install that as well but Maven 2 seems to be included in the standard package sources for Ubuntu 11.04 and is thus easier to install.
+For windows I guess you can find it here: <a href="http://www.open.collab.net/downloads/subversion/">Subversion</a>, <a href="http://maven.apache.org/download.html">Maven 3</a> and <a href="http://www.java.com/en/download/index.jsp">Java</a>.
+<h3>Installation</h3>
+Go to your favourite directory and then execute:
+<pre><code>svn checkout https://saim.svn.sourceforge.net/svnroot/saim/trunk saim
+cd saim/saim-core
+mvn compile
+</pre></code>
+<h3>Execution</h3>
+<pre><code>.../saim/saim-core$ mvn exec:java -Dexec.mainClass=de.evaluationtool.EvaluationTool</pre></code>
+If you work with very big files you may need <code>export MAVEN_OPTS=-Xmx2048m</code> (or some other value) before but in those cases you should probably have set a reasonable <a href="#loadLimit">load limit</a> anyways.
+<h3>Update</h3> The Evaluation Tool is now developed in <a href="https://github.com/AKSW/linkeval">its own project on github</a> but you should still use the old sourceforge link if you just want to run it.
+On github, my colleague Mofeed Hassan is developing a Web Interface for it with a different visualization, so if you want to help out with the development, create an issue or make a push request there.
+</section>
+<section>
+<h2>Workflow</h2>
+<h3>0. Creating the links</h3>
+Make sure that you create the links as either ntriples or alignment format. I actually suggest using both, with the ntriples file containing the links above your chosen thresholds and the alignment file
+also containing lowprecision links. This makes it easy to identify the best threshold and reselect the links without the need to run the matching again.
+In Silk that may look like this:
+<!-- original:
+<Filter threshold="0.70"/>
+<Outputs>
+ <Output type="file" >
+  <Param name="file" value="above70.xml"/>
+  <Param name="format" value="alignment"/>
+ </Output>
+ <Output minConfidence="0.95" type="file">
+  <Param name="file" value="links.nt"/>
+  <Param name="format" value="ntriples"/>
+ </Output>
+</Outputs>
+-->
+<pre><code><pre class="hl"><span class="hl kwa">&lt;Filter</span> <span class="hl kwb">threshold</span>=<span class="hl str">&quot;0.70&quot;</span><span class="hl kwa">/&gt;</span>
+<span class="hl kwa">&lt;Outputs&gt;</span>
+ <span class="hl kwa">&lt;Output</span> <span class="hl kwb">type</span>=<span class="hl str">&quot;file&quot;</span> <span class="hl kwa">&gt;</span>
+  <span class="hl kwa">&lt;Param</span> <span class="hl kwb">name</span>=<span class="hl str">&quot;file&quot;</span> <span class="hl kwb">value</span>=<span class="hl str">&quot;above70.xml&quot;</span><span class="hl kwa">/&gt;</span>
+  <span class="hl kwa">&lt;Param</span> <span class="hl kwb">name</span>=<span class="hl str">&quot;format&quot;</span> <span class="hl kwb">value</span>=<span class="hl str">&quot;alignment&quot;</span><span class="hl kwa">/&gt;</span>
+ <span class="hl kwa">&lt;/Output&gt;</span>
+ <span class="hl kwa">&lt;Output</span> <span class="hl kwb">minConfidence</span>=<span class="hl str">&quot;0.95&quot;</span> <span class="hl kwb">type</span>=<span class="hl str">&quot;file&quot;</span><span class="hl kwa">&gt;</span>
+  <span class="hl kwa">&lt;Param</span> <span class="hl kwb">name</span>=<span class="hl str">&quot;file&quot;</span> <span class="hl kwb">value</span>=<span class="hl str">&quot;links.nt&quot;</span><span class="hl kwa">/&gt;</span>
+  <span class="hl kwa">&lt;Param</span> <span class="hl kwb">name</span>=<span class="hl str">&quot;format&quot;</span> <span class="hl kwb">value</span>=<span class="hl str">&quot;ntriples&quot;</span><span class="hl kwa">/&gt;</span>
+ <span class="hl kwa">&lt;/Output&gt;</span>
+<span class="hl kwa">&lt;/Outputs&gt;</span>
+</code></pre>
+</section>
+<h3>1. Preparing a random sample</h3>
+In order for your evaluation to be representative, your sample has to be random.
+If you just want to take a quick peek at your file you can of course just set the load limit and then load your file but depending on the matching program used for creating them, the links at the beginning of the file may have totally different properties then those at the end of the file. And if you want to put your evaluation in a paper it has to be a random sample anyways.
+<h4>1.1 With a small linkset</h3>
+Set the <a href="#loadLimit">load limit</a> to 0 (unlimited) and load your file. It will be automatically shuffled after being loaded. Then, set the load limit to your desired sample size (e.g. 250) and go to Operations->Shrink to load limit. You now have a random sample loaded.
+<h4>1.2 With a big linkset</h3>
+If your linkset file is hundreds of megabytes in size, the program may crash due to insufficient heap size (a character in Java is always 16 Bit so a string needs about twice as much memory an equal UFT-8 encoding).
+While you you can increase the heap size via <code>export MAVEN_OPTS=-Xmx2048m</code> (or more), loading and shuffling still takes a while, so you can speed up the loading with the following:  
+<h5>1.2.1 If the format is ntriples</h3>
+Most modern linux distributions contain the sort command with the option -R (random).
+If your sort does not have the -R option, you need to upgrade your GNU Coreutils.
+If you don't have the sort command at all, you find it here <a href="http://www.gnu.org/software/coreutils/">for Linux</a> and here <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">for Windows</a>. 
+Now you can just do:
+<pre><code>sort -R links.nt -o links.nt
+head -<i>yoursamplesize</i> links.nt > sample.nt</code></pre>
+And load sample.nt.
+<h5>1.2.2 If the format is alignment</h3>
+Because the alignment format is XML based, you cannot just shuffle it directly.
+Fortunately, the Evaluation Tool includes an XSLT (XLS Transform) 2.0 Stylesheet named aligntocsv. Unfortunately the Ubuntu standard XSLT processor <code>xsltproc</code> is only XSLT 1.0 compatible so you need to install an XSLT 2.0  Processor like <a href="http://saxon.sourceforge.net/">SAXON</a>.
+You can then transform the Alignment file to a simple CSV table:   
+<figure><pre><code># saxon linkedct-pubmed-country/links.xml aligntocsv.xslt | tee links.csv
+http://data.linkedct.org/resource/country/sweden	http://bio2rdf.org/mesh:D013548	1.0
+http://data.linkedct.org/resource/country/puerto-rico	http://bio2rdf.org/mesh:D011647	1.0
+http://data.linkedct.org/resource/country/zimbabwe	http://bio2rdf.org/mesh:D015030	1.0
+http://data.linkedct.org/resource/country/uganda	http://bio2rdf.org/mesh:D014454	1.0
+http://data.linkedct.org/resource/country/brazil	http://bio2rdf.org/mesh:D001938	1.0
+</code></pre></figure>
+If you don't want to install a XSLT 2.0 processor you also just use your browser because all the modern browsers have XSLT 2.0 processors included.
+So in this case you would just prepend the following line to your links.xml file:
+<!--<?xml-stylesheet href="aligntocsv.xslt" type="text/xsl" ?>-->
+<pre class="hl"><span class="hl kwa">&lt;?xml-stylesheet</span> <span class="hl kwb">href</span>=<span class="hl str">&quot;aligntocsv.xslt&quot;</span> <span class="hl kwb">type</span>=<span class="hl str">&quot;text/xsl&quot;</span> <span class="hl kwa">?&gt;</span>
+</pre>
+<!--<?xml-stylesheet href="aligntocsv.xslt" type="text/xsl" ?>-->
+Now you can create a random sample via:
+<pre><code>sort -R links.csv -o links.csv
+head -<i>yoursamplesize</i> links.csv > sample.csv</code></pre>
+Now you can load sample.csv via Load->Reference as CSV.
+<section>
+<h3>2. Evaluating</h3>
+<figure>
+<img src="img/screenshot_example_evaluation.png" alt="an example screenshot of the Evaluation Tool"/>
+<figcaption>The program should now look like this</figcaption>
+</figure>
+After loading and shuffling, the program displays a list of the links together with a few buttons.
+Initially, only the urls of the links are displayed but the label thread sequentially loads the representative property (probably rdfs:label) for each URL from a SPARQL endpoint.
+If the labels are loaded correctly and display the right property you can now evaluate all the links with the buttons "correct", "incorrect" and "unsure".
+The "URLs" button resolves the urls of a link in the browser and also displays all their triples from the SPARQL endpoint.
+If the labels are not properly displayed, you need to...
+<h4>Configure the name sources</h4>
+</section>
+The names source file is located under <code>saim-core/config/namesources.csv</code>. You can open it in the program with Options->Edit name source file and when you are finished reload it with Options->Reload the name source file.
+On some platforms you may need to edit the file manually, as the program tries Desktop.edit() first which is not supported by all platforms and then uses "gedit" and if that fails "edit".
+The table below shows the structure of the name source file. There are four columns: prefix, property, endpoint and hasGeoCoordinates.  
+<figure>
+<table>
+<tr><td>prefix</td><td>property</td><td>endpoint</td><td>hasGeoCoordinates</td></tr>
+<tr><td>http://dbpedia.org/resource/</td><td>rdfs:label</td><td>http://dbpedia.org/sparql</td><td>true</td></tr>
+<tr><td>http://bio2rdf.org/mesh:</td><td>dc:title</td><td>http://mesh.bio2rdf.org/sparql</td><td>false</td></tr>
+</table>
+<figcaption>an exemplary name source file</figcaption>
+</figure>
+</body>
+</html>

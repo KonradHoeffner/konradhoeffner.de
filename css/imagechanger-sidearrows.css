@@ -1,0 +1,17 @@
+.imagesequence-container
+{
+ display: table;overflow: hidden;
+}
+.imagesequence-prev
+{
+ display: table-cell; vertical-align: middle;
+}
+.imagesequence-next
+{
+ display: table-cell; vertical-align: middle
+}
+.imagesequence-image
+{
+display: table-cell; vertical-align: middle;
+}
+

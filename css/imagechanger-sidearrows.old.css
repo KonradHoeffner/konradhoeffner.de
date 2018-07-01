@@ -1,0 +1,17 @@
+.imagesequence-container
+{
+ position:relative;
+}
+.imagesequence-prev
+{
+ height:100%;top:0px;left:0px;position:absolute;
+}
+.imagesequence-next
+{
+ height:100%;top:0px;right:0px;position:absolute;
+}
+.imagesequence-image
+{
+ height:100%;top:0px;position:absolute;
+}
+

@@ -1,0 +1,13 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://konradhoeffner.de/resource/konradhoeffner>
+   rdf:type schema:Person;
+   schema:name "Konrad Höffner";
+   schema:name "Male";
+   schema:givenName "Konrad";
+   schema:familyName "Höffner";
+   schema:nationality <http://dbpedia.org/resource/Germany>;
+   schema:homeLocation <http://dbpedia.org/resource/Leipzig>;
+   schema:jobTitle "Ph.D. Student";
+   schema:worksFor <http://dbpedia.org/resource/University_of_Leipzig> .

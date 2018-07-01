@@ -1,0 +1,133 @@
+<!doctype HTML>
+<meta charset="utf-8">
+<html>
+<head>
+<style type="text/css">
+ .abstract {font-style: italic; }
+
+.publication-container
+ {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+ }
+ .publication-filter
+ {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+ }
+ .publication-list
+ {
+  width:100em;
+  margin: 1em;
+ }
+
+ @media (max-width: 600px)
+ {
+  .publication-container 
+  {
+   flex-direction: column-reverse;
+  }
+  .publication-filter
+  {
+  }
+ }
+</style>
+ <script src="http://api.simile-widgets.org/exhibit/3.0.0/exhibit-api.js" type="text/javascript"></script>
+ <link href="http://aksw.org/BibsonomyProxy/exhibit-proxy.php?suffix=user/aksw/hoeffner&callback=cb" type="application/jsonp" rel="exhibit/data" ex:jsonp-callback="cb" />
+</head>
+<body>
+<div class="publication-container">
+<div class="publication-filter">
+ <!-- use this for lists cantaining a lot of publication and authors-->
+ <h2 class="hideme">Filters</h2>
+ <div ex:role="facet" ex:facetClass="TextSearch" ex:facetLabel="Keyword"></div>
+ <div class="subcolumns equalize">
+ <div class="c33l"><div class="subcl">
+ <div ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse" ex:height="15em"></div>
+ </div></div>
+ <div class="c33l"><div class="subc">
+ <div ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count" ex:height="15em"></div>
+ </div></div>
+ <div class="c33r"><div class="subcr">
+ <div ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count" ex:height="15em"></div>
+ </div></div>
+ </div>
+
+<!--<nav class="nav-sidelinks">
+ <div class="exhibit-filter-tools">-->
+ <!-- use this for lists containing only a few publications and authors -->
+ <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".year" ex:facetLabel="Year" ex:sortDirection="reverse"></div>
+ <div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".pub-type" ex:facetLabel="Type" ex:sortMode="count"></div>
+ <!--div ex:facetClass="Cloud" ex:role="facet" ex:showMissing="false" ex:expression=".author" ex:facetLabel="(Co-)Authors" ex:sortMode="count"></div-->
+<!-- </div>
+</nav>-->
+</div> <!-- /.exhibit-filter-tools -->
+
+<div class="publication-list">
+<div ex:role="view" ex:grouped="false" ex:orders=".year,.label" ex:directions="descending,ascending" ex:showSummary="true" ex:showDuplicates="false">
+ <div ex:role="lens" ex:itemTypes="Publication" style="display: none">
+ <strong>
+ <span ex:content="if(exists(.url), concat('<a href=', .url, '>', .label, '</a>'), .label)"></span>
+ <span ex:if-exists=".author">
+ <span class="meta"><em>by</em> <span class="author" ex:content=".author"></span></span>
+ </span>
+ </strong>
+ <span class="meta">
+ <span ex:content="if(exists(.booktitle), concat('<em>in</em> ', .booktitle), '')"></span>
+ <span class="journal" ex:content="if(exists(.journal), concat('<em>in</em> ', .journal), '')"></span>
+ <span ex:if-exists=".editor">(Editors: <span class="editor" ex:content=".editor"></span>)</span>
+ <a ex:if-exists=".biburl" ex:href-content=".biburl" >[BibTex<span class="hideme"> of <span ex:content=".label"></span></span>]</a>
+ </span>
+ <span class="note" ex:content="if(exists(.note), concat('<br/><em>Note:</em> ', .note), '')"></span>
+ <span class="abstract" ex:content="if(exists(.abstract), concat('<br/><details><summary>Abstract:</summary> ', .abstract, '</details>'), '')"></span>
+ </div>
+</div>
+</div>
+
+</div>
+<!--<h2>Paper</h2>
+<h3>2009</h3>
+<ul>
+<li>
+<em>Standardized Multilingual Language Resources for the Web of Data</em></br>
+Matthias Quasthoff, Sebastian Hellmann, Konrad Höffner</br>
+<strong>3rd prize at the <a href="http://triplify.org/Challenge/2009">LOD Triplification Challenge, Graz, 2009</a></strong>
+<b>Abstract</b>
+<span class="abstract">Statistical knowledge on natural languages is inevitable for various kinds of services requiring Natural Language Processing (NLP) functionality, such as information retrieval. The NLP Group at the University of Leipzig started providing such statistical information for more than 50 languages in the Leipzig Corpora</span>
+<ul>
+<li><a href="http://triplify.org/files/challenge_2009/languageresources.pdf">Download</a</li>
+<li><a href="http://www.bibsonomy.org/bibtex/204fdcc796062a570533bc386b218270a/aksw">Bibtex</a></li>
+</ul>
+</li>
+</ul>
+<h3>2010</h3>
+<ul>
+<li>
+<em>...</em>
+</li>
+</ul>
+<h3>2011</h3>
+<ul>
+<li>
+<em>LinkedGeoData: A Core for a Web of Spatial Open Data</em></br>
+Claus Stadler, Jens Lehmann, Konrad Höffner, and Sören Auer</br>
+<ul>
+<li><a href="http://www.semantic-web-journal.net/sites/default/files/swj173_1.pdf">Download</a</li>
+<li><a href="">Bibtex</a></li>
+</ul>
+</li>
+</ul>
+
+-> todo: das für das semantic web journal on Linked Spatiotemporal Data and Geo-Ontologies
+<h2>Misc</h2>
+<ul>
+<li>2011-08<br/>Review of a paper for the <a href="http://www.icde2011.org/">IEEE International Conference on Data Engineering (ICDE) 2011</a>.
+</li>
+</ul>
+todo:
+ http://om2011.ontologymatching.org
+ http://www.dit.unitn.it/~p2p/OM-2011/om2011_Tpaper3.pdf-->
+ </body>
+</html>

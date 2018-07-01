@@ -1,0 +1,12 @@
+# Turn off MultiViews
+Options +FollowSymLinks -MultiViews
+
+# Rewrite engine setup
+RewriteEngine On
+RewriteBase /
+
+# Directive to ensure files are served with the appropriate content type,
+# if not present in main Apache config.
+AddType application/rdf+xml .rdf
+AddType text/turtle .ttl
+
