@@ -39,21 +39,30 @@ imagesequence-image
 
 /* links */
 
-a {
+a
+{
   text-decoration: none;
 }
-a:link {
+
+a:link
+{
   color: FireBrick;
   border-bottom: 1px dotted;
 }
-a:visited {
+
+a:visited
+{
   color: RosyBrown;
   border-bottom: 1px dotted;
 }
-a:link:hover, a:visited:hover {
+
+a:link:hover, a:visited:hover
+{
   border-bottom: 1px solid;
 }
-.c a {
+
+.c a
+{
   color: inherit;
 }
 
@@ -69,20 +78,21 @@ margin: auto auto;
 nav ul
 {
 list-style: none;
+display:flex;
+flex-wrap: wrap;
 }
 
 nav li
 {
-float: left;
-margin: auto 0.15em;
+margin: 0em 0.15em;
+width: 7em;
+/*background-color: red;*/ /* For testing.*/
+flex-grow: 1;
 }
 
 nav li a
 {
 line-height: 2em;
-float: left;
-display: block;
-width: 9em;
 color: blue;
 text-decoration: none;
 text-align: center;
