@@ -1,3 +1,4 @@
+// use maximum image dimensions of 1280 x 720
 var games =
 [
  {
