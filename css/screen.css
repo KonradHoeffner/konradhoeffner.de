@@ -67,19 +67,18 @@ a:link:hover, a:visited:hover
 }
 
 
-/*nav element */
-/*
 nav
 {
-position:relative;
-margin: auto auto;
+ background-color: black;
+ color: white;
 }
-*/
+
 nav ul
 {
 list-style: none;
 display:flex;
 flex-wrap: wrap;
+margin: 0px;
 }
 
 nav li
@@ -97,14 +96,14 @@ color: blue;
 text-decoration: none;
 text-align: center;
 }
-nav li a:link, nav li a:visited {color:#000000;border: 1px solid transparent;}
+nav li a:link, nav li a:visited {color:white;border: 1px solid transparent;}
 nav li a:link:hover,nav li a:visited:hover {border: 1px solid #000000;
 }
 
 
 .main
 {
- padding-top: 3em;
+ padding: 1em 1em 0 1em;
 }
 /*a:hover{border-bottom:1px solid}
 a:visited{color:blue}
@@ -189,8 +188,7 @@ html, body {
 body {
   font: large/1.556 "Linux Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   word-spacing: 0.1em;
-  margin: 0 auto;
-  padding: 0 1em 0 1em;
+  margin: 0;
 }
 
 pre, kbd, samp, code, var {
