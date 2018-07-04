@@ -2,23 +2,17 @@
 <html lang="en">
 <meta charset="UTF-8">
 <head>
- <title>Konrad Höffner | Games</title>
+ <title>Konrad Höffner | Projects</title>
  <link rel=stylesheet href=css/screen.css>
- <script src="js/games.js"></script>
+ <script src="js/projects.js"></script>
  <style type="text/css">
   .left
   {
-   width: 600px;
+   width: 60%;
   }
   .right
   {
    width: 40%;
-  }
-
-  img
-  {
-   max-width:100%;
-   object-fit: scale-down;
   }
  </style>
 </head>
@@ -32,14 +26,14 @@
  <th class="right"></th>
 </tr>
 <script>
-for(game of games)
+for(project of projects)
 {
 document.write("<tr><td>");
-document.write(`<h2>${game.name}</h2>`);
-document.write(`${game.description}<br>`);
-document.write(`<br><a href="${game.href}" target="_blank">Play</a>`);
+document.write(`<h2>${project.name}</h2>`);
+document.write(`${project.description}<br>`);
+document.write(`<br><a href="${project.href}" target="_blank">Project Homepage</a>`);
 document.write("</td>");
-document.write(`<td><img src="${game.img}"/></td></tr>`);
+document.write(`<td><img src="${project.img}"/></td></tr>`);
 }
 </script>
 </table>
