@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+ <title>Konrad Höffner | Reviews</title>
+ <link rel=stylesheet href=css/screen.css>
+ <script src="js/reviews.js"></script>
+ <style type="text/css">
+  .left
+  {
+   width: 60px;
+  }
+  .right
+  {
+  }
+ </style>
+</head>
+<body>
+<header>
+<div class="main">
+<section>
+I have been reviewing publications as Program Committee member or subreviewer for the following journals and conferences:
+<table>
+<tr>
+ <th class="left"></th>
+ <th class="right"></th>
+</tr>
+<script>
+for(year in reviews)
+{
+document.write("<tr>");
+document.write(`<td>${year}</td>`);
+document.write(`<td>${Array.prototype.join.call(reviews[year],', ')}</td>`);
+document.write("</tr>");
+}
+</script>
+</table>
+</section>
+</div>
+</body>
+</html>
