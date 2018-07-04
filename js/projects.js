@@ -13,11 +13,11 @@ var projects =
  },
  {
   name: "SNIK",
-  type: "",
-  funding: "",
-  task: "",
+  type: "<a href='http://www.dfg.de/en'>DFG</a> Research Project",
+  funding: "?",
+  task: "RDF Data Generation and Conversion, Ontology Engineering, Web Development,RDF Interlinking, Scientific Writing, Dissemination",
   year: "2016",
-  href: "",
+  href: "http://snik.eu/",
   img: "img/.jpg",
   description: ""
  },
