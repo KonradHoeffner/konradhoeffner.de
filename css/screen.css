@@ -121,6 +121,11 @@ a:visited{color:blue}
   border: 1px dotted;
 }
 
+table td
+{
+    vertical-align: top;
+}
+
 /* typography */
 
 @font-face {
