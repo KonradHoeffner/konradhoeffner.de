@@ -55,3 +55,4 @@ var projects =
  name: "LOD around the clock?"
  }
 ];
+// big data europe?

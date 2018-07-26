@@ -4,7 +4,15 @@
        <meta charset="utf-8">
        <title>Borland Pascal 2D Shooter</title>
        <style type="text/css">
-         .dosbox-container { width: 320px; height: 200px; }
+	 body {background-color: #222222;}
+         .dosbox-canvas
+	 {
+	  width: 1280px;
+	  height: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  display: block;
+	 }
        </style>
      </head>
      <body>
@@ -17,7 +25,7 @@
          var dosbox = new Dosbox({
            id: "dosbox",
            onload: function (dosbox) {
-             dosbox.run("katze.zip", "./katze.exe");
+             dosbox.run("cats.zip", "./katze.exe");
            },
            onrun: function (dosbox, app) {
              console.log("App '" + app + "' is runned");

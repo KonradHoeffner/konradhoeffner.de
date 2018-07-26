@@ -18,7 +18,12 @@
   img
   {
    max-width:100%;
-   object-fit: scale-down;
+   object-fit: contain;
+   min-width:640px;
+   min-height:400px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
   }
  </style>
 </head>
@@ -35,7 +40,7 @@
 for(game of games)
 {
 document.write("<tr><td>");
-document.write(`<h2>${game.name}</h2>`);
+document.write(`<h2>${game.name} (${game.year})</h2>`);
 document.write(`${game.description}<br>`);
 document.write(`<br><a href="${game.href}" target="_blank">Play</a>`);
 document.write("</td>");
