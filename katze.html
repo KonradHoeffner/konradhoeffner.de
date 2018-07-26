@@ -1,0 +1,28 @@
+ <!doctype html>
+   <html>
+     <head>
+       <meta charset="utf-8">
+       <title>Borland Pascal 2D Shooter</title>
+       <style type="text/css">
+         .dosbox-container { width: 320px; height: 200px; }
+       </style>
+     </head>
+     <body>
+       <div id="dosbox"></div>
+       <br/>
+       <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
+       
+       <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+       <script type="text/javascript">
+         var dosbox = new Dosbox({
+           id: "dosbox",
+           onload: function (dosbox) {
+             dosbox.run("katze.zip", "./katze.exe");
+           },
+           onrun: function (dosbox, app) {
+             console.log("App '" + app + "' is runned");
+           }
+         });
+       </script>
+     </body>
+   </html>
