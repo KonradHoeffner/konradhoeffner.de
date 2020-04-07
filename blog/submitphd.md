@@ -58,7 +58,7 @@ I didn't have the time left for that and you probably don't and shouldn't, but i
     }
   
 ### Colorcheck script
-The colorcheck script will tell you, how many colored and grayscale pages your document has and show you the pages with color on it and the average values for the CMYK  hannels in that order. The `tail -n +6` may break in the future and removes the ghostscript version and license information.
+The colorcheck script will tell you, how many colored and grayscale pages your document has and show you the pages with color on it and the average values for the CMYK channels in that order. The `tail -n +6` may break in the future and removes the ghostscript version and license information.
 
     gs -o - -sDEVICE=inkcov $1 | tail -n +6 | sed ':a;N;$!ba;s/\n / /g' > /tmp/colorlog # each page on one line
     echo -n "Black and white pages: "
@@ -85,7 +85,7 @@ You only need to know three things about CMYK:
 
 1. it stands for Cyan, Magenta, Yellow and Key (black)
 2. black pages need to only use the key channel
-3. not all RGB values cannot be represented in CMYK, such as a bright red (255,0,0)
+3. not all RGB values can be represented in CMYK, such as a bright red (255,0,0)
 
 A page that gets reported by colorcheck may contain a PDF picture that looks perfectly grayscale to the human eye but that has its black value mixed from the other colors, not the black channel.
 If it is a picture that you didn't produce yourself from within LaTeX, you can convert it using Ghostscript:
