@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+ <title>Finishing Your PhD at the FMI Leipzig</title>
+ <link rel=stylesheet href=../../css/screen.css>
+</head>
+<body>
+
+<h1>Finishing Your PhD Thesis&mdash;Formal Requirements at FMI Leipzig</h1>
+
+<p>The formalities are detailed at the <a href="https://www.fmi.uni-leipzig.de/cms/de/forschung/promotionen/">FMI &ldquo;Promotionen&rdquo; Page</a>, mostly in the &ldquo;Promotionsordnung&rdquo;, but they are quite detailed and require a number of different documents.
+I&rsquo;m very thankful to Nathanael Arndt, Thomas Pause and indirectly Nicolas Wieseke for helping me and for scripts and templates, which I compiled below to help others save time and nerves.</p>
+
+<h2>Finding Referees</h2>
+
+<p>In addition to your supervisor, you need to find three potential referees for your PhD thesis, and you should do this well in advance of your submission because it may take a while to find and contact them.
+At least one of them needs to be Professor at a university, the others may also be Junior Professor, Professor at a &ldquo;Fachhochschule&rdquo; (a university of applied science) or have an habilitation equivalent.
+At least one of them also needs to be teaching at the FMI Leipzig, else you need to ask a FMI Professor if you can schedule a meeting to present your thesis and get and endorsement (&ldquo;Befürwortung der Einreichung der Dissertation&rdquo;).
+At the end, two of the referees get chosen.</p>
+
+<h2>Submission Checklist</h2>
+
+<ul>
+<li>3 printed copies of the thesis</li>
+<li>1 digital copy of the thesis</li>
+<li>30 copies of the abstract</li>
+<li>cover letter (including the 3 reviewer candidates) <a href="cover.tex">Download Cover Letter LaTeX Template</a></li>
+<li>CV (You can use the <a href="https://ctan.org/pkg/moderncv">moderncv package</a>.</li>
+<li>declaration according to the Promotionsordnung <a href="declaration.tex">Download Declaration LaTeX Template</a></li>
+<li>list of your publications</li>
+<li>original of your high school certificate</li>
+</ul>
+
+
+<p><a href="Titlepage.tex">Titlepage.tex</a> gives the two versions of your dissertations title page, the preliminary one you have to submit and the final one you have to hand in after your defense.
+Just comment/uncomment the corresponding parts.</p>
+
+<h2>Corona</h2>
+
+<p>During the Corona crisis, please see <a href="https://www.fmi.uni-leipzig.de/cms/de/startseite/">https://www.fmi.uni-leipzig.de/cms/de/startseite/</a>.</p>
+
+<h1>Finishing Your PhD Thesis&mdash;Prepare for Printing</h1>
+
+<p>I assume that you write it in LaTeX using the classicthesis template and have a Linux command line available.</p>
+
+<h2>One-sided vs Two-sided</h2>
+
+<p>You can choose either one-sided or two-sided printing, which is a personal choice.
+One-sided printing is the easiest because you have the same margin on all pages.
+Two-sided printing is more compact and looks more professional in my opinion but you need to take care that the margins are mirrored.
+With the <code>classicthesis</code> package, this is done by adding the <code>twoside</code> argument to the <code>sccreprt</code> document class, in my case:</p>
+
+<pre><code>\documentclass[twoside,openright,titlepage,numbers=noenddot,
+               headinclude,footinclude,cleardoublepage=empty,abstract=on,
+               BCOR=5mm,paper=a4,fontsize=11pt
+              ]{scrreprt}
+</code></pre>
+
+<p>The title page and the first page of each chapter needs to be on the right side by adding empty pages if necessary, which is provided by the <code>openright</code> option.
+View the PDF in two-sided mode and check if those pages are all on the right side and have odd page numbers.
+The title page is the first page in the document, so the PDF starts at the right side.
+If you perform any changes here, check if the formatting in your document is still correct, as changing margins could move things around or destroy a table layout.</p>
+
+<h2>LaTeX Warnings</h2>
+
+<p>Of course there should never be any errors when compiling a LaTeX document but what about all those hundreds of warnings that you collected and ignored over the years?
+The log can have a thousand lines or more because pdflatex is very verbose but some nasty surprises can be hidden there so I recommend you to go through it at least once, even though you cannot fix all of them.
+You can remove some of the clutter in vim via <code>:%s/^.*\/usr\/share\:q/texmf-dist\/.*$\n//</code> (adapt to your LaTeX installation path).</p>
+
+<h3>Overful Hboxes</h3>
+
+<p>Overful hboxes are elements going over your right margin, which should not happen.
+Overful and underful hboxes are included in your log but you can visualize overful hboxes using <code>\setlength{\overfullrule}{20pt}</code> (don&rsquo;t forget to take this out afterwards).
+Sometimes an overful hbox is reported but not actually visible because only the invisible part of an element, such as a table, runs over the margin, in which case you can ignore it.</p>
+
+<h2>Color</h2>
+
+<p>Colored pages are about ten times more expensive than grayscale, so you need to find them, reduce the number of them as much as possible and then tell the printing studio how many there are for calculating the price.</p>
+
+<h3>Colored Text Elements</h3>
+
+<p>At first I had a huge number of colored pages because all my links and listings were colored, which looks great on paper but is very costly.
+However you can still keep a screen version with all the nice colors intact.
+Bonus points if you can implement a switch between a print and a screen version.
+I didn&rsquo;t have the time left for that and you probably don&rsquo;t and shouldn&rsquo;t, but if you do, please tell me!</p>
+
+<h4>Links</h4>
+
+<pre><code>\hypersetup{%
+ colorlinks=false, % print version
+ %colorlinks=true, % screen version
+ [...]
+ pdfborder={0 0 0}, % I don't like link borders but if you do those are perfect for that purpose as they are only shown on screen, not in print! Requires colorlinks=false to be shown.
+</code></pre>
+
+<h3>Listings</h3>
+
+<pre><code>\definecolor{listkeyword}{gray}{0.3}
+\lstset{
+ %keywordstyle=\color{cyan}, % screen version
+ keywordstyle=\color{listkeyword}, % print version
+ [...]
+}
+</code></pre>
+
+<h3>Colorcheck script</h3>
+
+<p>Ghostscript can detect all pages that contain color (<a href="https://tex.stackexchange.com/questions/53493/detecting-all-pages-which-contain-color/61216#61216">Source: StackOverflow</a>).
+The colorcheck script will tell you, how many colored and grayscale pages your document has and show you the pages with color on it and the average values for the CMYK channels in that order.
+The <code>tail -n +6</code> is adapted to Ghostscript 9.52 and may break in the future and removes the ghostscript version and license information.</p>
+
+<pre><code>gs -o - -sDEVICE=inkcov $1 | tail -n +6 | sed ':a;N;$!ba;s/\n / /g' &gt; /tmp/colorlog # each page on one line
+echo -n "Black and white pages: "
+grep -e "0.00000  0.00000  0.00000  [01]." /tmp/colorlog | wc -l
+echo -n "Colored pages: "
+grep -v -e "0.00000  0.00000  0.00000  [01]." /tmp/colorlog | wc -l
+grep -v -e "0.00000  0.00000  0.00000  [01]." /tmp/colorlog
+</code></pre>
+
+<h4>Example</h4>
+
+<pre><code>$ colorcheck main.pdf
+Black and white pages: 128
+Colored pages: 7
+Page 1 0.00000  0.00264  0.00264  0.01284 CMYK OK
+Page 21 0.03851  0.03842  0.03844  0.03065 CMYK OK
+Page 22 0.07243  0.06588  0.07243  0.10790 CMYK OK
+Page 66 0.01619  0.01619  0.01399  0.05655 CMYK OK
+Page 81 0.09786  0.11218  0.10922  0.02548 CMYK OK
+Page 82 0.15376  0.15006  0.14548  0.06880 CMYK OK
+Page 84 0.04707  0.04707  0.03834  0.03834 CMYK OK
+</code></pre>
+
+<h3>CMYK Color Space</h3>
+
+<p>You only need to know three things about CMYK:</p>
+
+<ol>
+<li>it stands for Cyan, Magenta, Yellow and Key (black)</li>
+<li>black pages need to only use the key channel</li>
+<li>not all RGB values can be represented in CMYK, such as a bright red (255,0,0)</li>
+</ol>
+
+
+<p>A page that gets reported by colorcheck may contain a PDF picture that looks perfectly grayscale to the human eye but that has its black value mixed from the other colors, not the black channel.
+If it is a picture that you didn&rsquo;t produce yourself from within LaTeX, you can convert it using Ghostscript:</p>
+
+<pre><code>gs \
+ -sOutputFile=output.pdf \
+ -sDEVICE=pdfwrite \
+ -sColorConversionStrategy=Gray \
+ -dProcessColorModel=/DeviceGray \
+ -dCompatibilityLevel=1.4 \
+ -dNOPAUSE \
+ -dBATCH \
+ input.pdf 
+</code></pre>
+
+<p>To ensure better looking colors, prefer CYMK primary colors to RGB.
+The following lines are an excerpt from a Tikz picture of a Venn diagram:</p>
+
+<pre><code>% CMYK
+\node[venn circle = magenta] (SW) at (0,0) {};
+\node[venn circle = cyan] (QA) at (60:0.17\textwidth) {};
+\node[venn circle = yellow] (QB) at (0:0.17\textwidth) {};
++% RBG
++% \node[venn circle = red] (SW) at (0,0) {};
++% \node[venn circle = blue] (QA) at (60:0.17\textwidth) {};
++% \node[venn circle = green] (QB) at (0:0.17\textwidth) {};
+</code></pre>
+
+<h2>Printing</h2>
+
+<p>I went to <a href="https://reprograf-leipzig.de/">REPRO Graf</a> in Leipzig, who printed and bound it for me quickly and for a good price.
+I didn&rsquo;t choose any fancy options, just standard A4 80g paper and hardcover binding.
+The only problem was that they printed it one-sided as that is their default, however I just kept it as a personal copy.
+Because two-sided margins differ between even and odd pages, you cannot submit a one-sided printing of a two-sided document, so communicate this very clearly in advance!</p>
+
+</body>
+</html>

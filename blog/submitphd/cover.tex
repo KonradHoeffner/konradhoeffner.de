@@ -1,0 +1,106 @@
+\documentclass[
+  fontsize=10pt,
+  paper=a4,
+  parskip=half,
+  enlargefirstpage=true,    % More space on first page
+  fromalign=right,        % PLacement of name in letter head
+  fromphone=on,           % Turn on phone number of sender
+  fromrule=aftername,     % Rule after sender name in letter head
+  fromemail=true,         % <===========================================
+  addrfield=on,           % Adress field for envelope with window
+  backaddress=on,         % Sender address in this window
+  subject=beforeopening,  % Placement of subject
+  locfield=narrow,        % Additional field for sender
+  foldmarks=on,           % Print foldmarks
+]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{blindtext}
+\usepackage{graphicx}
+% \usepackage{newcent}
+
+
+\setkomafont{fromname}{\sffamily \LARGE}
+\setkomafont{fromaddress}{\sffamily}%% statt \small
+\setkomafont{pagenumber}{\sffamily}
+\setkomafont{subject}{\bfseries}
+\setkomafont{backaddress}{\mdseries}
+
+%replace name and address here and name below in the letter
+\LoadLetterOption{DIN}
+\setkomavar{fromname}{Max Mustermann}
+\setkomavar{fromaddress}{Musterstreet 42\\ xxxxx Leipzig}
+\setkomavar{fromphone}{123456789}
+\setkomavar{fromemail}{muster@bioinf.uni-leipzig.de} 
+
+\setkomavar{place}{Leipzig}
+\setkomavar{date}{\today}
+ \usepackage{marvosym} % <================================================
+
+\begin{document}
+\renewcaptionname{ngerman}\emailname{\Email} % <=========================
+\renewcaptionname{ngerman}\phonename{\Telefon} % <=======================
+\setlength{\textheight}{13cm}
+
+% \LoadLetterOption{DIN} %% oder: DINmtext, SN, SNleft, KOMAold.
+% \makeatletter
+% \@setplength{firstheadvpos}{17mm}
+% \@setplength{firstfootvpos}{275mm} % Abstand des Footers von oben
+% \@setplength{firstheadwidth}{\paperwidth}
+% \@setplength{locwidth}{70mm}   % Breite des Locationfeldes
+% \@setplength{locvpos}{55mm}    % Abstand des Locationfeldes von oben
+% \ifdim \useplength{toaddrhpos}>\z@
+%   \@addtoplength[-2]{firstheadwidth}{\useplength{toaddrhpos}}
+% \else
+%   \@addtoplength[2]{firstheadwidth}{\useplength{toaddrhpos}}
+% \fi
+% \@setplength{foldmarkhpos}{6.5mm}
+% \makeatother
+
+
+\begin{letter}{
+An den Dekan der Fakult\"at f\"ur Mathematik und Informatik\\ 
+Universit\"at Leipzig\\ 
+Augustusplatz 10\\ 
+04109 Leipzig}
+
+\setkomavar{subject}{Antrag auf Durchf\"uhrung meines Promotionsverfahrens}
+
+\opening{Sehr geehrter Prof. Dr. Middendorf,} %this should be the current dean of the faculty
+
+\smallskip
+
+hiermit m\"ochte ich die Durchf\"uhrung meines Promotionsverfahrens
+im Fachgebiet Informatik zur Erlangung des Doktorgrades
+Doctor rerum naturalium (Dr.~rer.~nat.) an der Fakult\"at f\"ur
+Mathematik und Informatik der Universit\"at Leipzig beantragen.
+
+\smallskip
+
+Die Anfertigung der Dissertation wurde von Prof. Dr. [your supervisor]
+der Universit\"at Leipzig betreut.
+
+\smallskip
+
+Als Gutachter schlage ich neben Prof. [your supervisor] noch folgende Personen vor:
+
+\begin{itemize}
+	\item external reviewer 1
+	\item external reviewer 2
+	\item external reviewer 3
+\end{itemize}
+
+
+\closing{Mit freundlichen Grüßen\\[5pt]
+Max Mustermann}
+
+ \encl{
+ 	3 gebundene Exemplare der Dissertation\\
+	30 Kopien der Zusammenfassung\\%this will be the hand out at your defense
+	wissenschaftlicher Werdegang\\ %you have to add a picture here!
+	Publikationsliste\\%all your publications
+	Erkl\"arungen laut Promotionsordnung}
+
+\end{letter}
+\end{document}

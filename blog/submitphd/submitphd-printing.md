@@ -1,11 +1,7 @@
-# How to Submit Your PhD Thesis
-Have you finished writing and correcting your thesis but don't know how to fulfill all those formal requirements, print and submit the thesis?
-I will help you get over that final hump by detailing my experiences with submitting my thesis.
-I assume that you write it in LaTeX and have a Linux command line available.
+# Finishing Your PhD Thesis&mdash;Prepare for Printing
+I assume that you write it in LaTeX using the classicthesis template and have a Linux command line available.
 
-## Prepare for Printing
-
-### One-sided vs Two-sided
+## One-sided vs Two-sided
 You can choose either one-sided or two-sided printing, which is a personal choice.
 One-sided printing is the easiest because you have the same margin on all pages.
 Two-sided printing is more compact and looks more professional in my opinion but you need to take care that the margins are mirrored.
@@ -22,12 +18,12 @@ View the PDF in two-sided mode and check if those pages are all on the right sid
 The title page is the first page in the document, so the PDF starts at the right side.
 If you perform any changes here, check if the formatting in your document is still correct, as changing margins could move things around or destroy a table layout.
 
-### LaTeX Warnings
+## LaTeX Warnings
 Of course there should never be any errors when compiling a LaTeX document but what about all those hundreds of warnings that you collected and ignored over the years?
 The log can have a thousand lines or more because pdflatex is very verbose but some nasty surprises can be hidden there so I recommend you to go through it at least once, even though you cannot fix all of them.
 You can remove some of the clutter in vim via `:%s/^.*\/usr\/share\:q/texmf-dist\/.*$\n//` (adapt to your LaTeX installation path).
 
-#### Overful Hboxes
+### Overful Hboxes
 Overful hboxes are elements going over your right margin, which should not happen.
 Overful and underful hboxes are included in your log but you can visualize overful hboxes using `\setlength{\overfullrule}{20pt}` (don't forget to take this out afterwards).
 Sometimes an overful hbox is reported but not actually visible because only the invisible part of an element, such as a table, runs over the margin, in which case you can ignore it.
@@ -48,7 +44,7 @@ I didn't have the time left for that and you probably don't and shouldn't, but i
      [...]
      pdfborder={0 0 0}, % I don't like link borders but if you do those are perfect for that purpose as they are only shown on screen, not in print! Requires colorlinks=false to be shown.
 
-#### Listings
+### Listings
 
     \definecolor{listkeyword}{gray}{0.3}
     \lstset{
@@ -58,7 +54,9 @@ I didn't have the time left for that and you probably don't and shouldn't, but i
     }
   
 ### Colorcheck script
-The colorcheck script will tell you, how many colored and grayscale pages your document has and show you the pages with color on it and the average values for the CMYK channels in that order. The `tail -n +6` may break in the future and removes the ghostscript version and license information.
+Ghostscript can detect all pages that contain color ([Source: StackOverflow](https://tex.stackexchange.com/questions/53493/detecting-all-pages-which-contain-color/61216#61216)).
+The colorcheck script will tell you, how many colored and grayscale pages your document has and show you the pages with color on it and the average values for the CMYK channels in that order.
+The `tail -n +6` is adapted to Ghostscript 9.52 and may break in the future and removes the ghostscript version and license information.
 
     gs -o - -sDEVICE=inkcov $1 | tail -n +6 | sed ':a;N;$!ba;s/\n / /g' > /tmp/colorlog # each page on one line
     echo -n "Black and white pages: "
@@ -113,10 +111,7 @@ The following lines are an excerpt from a Tikz picture of a Venn diagram:
     +% \node[venn circle = green] (QB) at (0:0.17\textwidth) {};
 
 ## Printing
-Communicate very clearly whether you want one-sided or two-sided printing!
-Most students print one-sided in copy shops, so in my case I wasn't clear enough about it and they printed it one-sided and it needed to be printed again.
-
-## Final Thoughts
-The form templates are made for the Faculty of Mathematics and Computer Science at Leipzig University, adapt to your own if you want to submit somewhere else.
-Many thanks to Nathanael Arndt for providing me with templates, scripts and many answers.
-If you have additional advice or questions, contact me at...
+I went to [REPRO Graf](https://reprograf-leipzig.de/) in Leipzig, who printed and bound it for me quickly and for a good price.
+I didn't choose any fancy options, just standard A4 80g paper and hardcover binding.
+The only problem was that they printed it one-sided as that is their default, however I just kept it as a personal copy.
+Because two-sided margins differ between even and odd pages, you cannot submit a one-sided printing of a two-sided document, so communicate this very clearly in advance!
