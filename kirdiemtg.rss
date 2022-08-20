@@ -19,6 +19,34 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Chulane, Teller of Tales </title>
+      <description>MTG Commander Deck mit Chulane, Teller of Tales</description>
+      <content:encoded><![CDATA[]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2020-01-18.zur.m4a"/>
+      <guid>kirdiemtg-zur-2020-01-18</guid>
+      <pubDate>18 Jan 2020 12:00:00 GMT</pubDate>
+      <itunes:duration></itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Breya, Ätheriumformerin</title>
+      <description>Flexibles Artefaktdeck mit Breya, Äteriumformerin</description>
+      <content:encoded><![CDATA[]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2019-10-05-breya.m4a"/>
+      <guid>kirdiemtg-breya-2019-10-05</guid>
+      <pubDate>05 Oct 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>2065</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>5</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Zur der Verzauberer Voltron Kontrolle</title>
