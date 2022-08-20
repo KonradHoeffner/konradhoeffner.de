@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>KirdieMTG</title>
+    <link>https://www.youtube.com/channel/UCftM5Epe2r2DXiqiUWG5HAA</link>
+    <language>de-DE</language>
+    <copyright>2022 Konrad Höffner</copyright>
+    <itunes:author>Konrad Höffner</itunes:author>
+    <description>Deutscher High Power Magic: The Gathering Commander Podcast</description>
+    <itunes:type>episodic</itunes:type>
+    <itunes:owner>
+      <itunes:name>Konrad Höffner</itunes:name>
+      <itunes:email>magic@bin-wieder-da.de</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://konradhoeffner.de/kirdiemtg/kirdiemtg.jpg"/>
+    <itunes:category text="Leisure">
+      <itunes:category text="Games"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Tasigur, der goldene Giftzahn</title>
+      <description></description>
+      <content:encoded><![CDATA[
+	  Tasigur Control ist nicht meine eigene Erfindung sondern wird unter anderem im <a href="https://discordapp.com/invite/ERMTuyP">Tasgur Discord (Englisch)</a> entwickelt und besprochen.
+      Einen ausführlichen englischen Primer einer kompetitiven Version findet ihr <a href="https://www.moxfield.com/decks/LcNaaKov-kGLxjUvclpDdg">hier</a>.
+	  ]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2019-06-16-tasigur.m4a"/>
+      <guid>kirdiemtg-tasigur-2019-06-16</guid>
+      <pubDate>16 Jun 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>1992</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Najeela, the Blade-Blossom Tempo Deck</title>
+      <description>Najeela ist eine der stärksten Commanderinnen überhaupt und bietet mit ihrer Fähigkeit die seltene Möglichkeit, ein starkes Tempo-Deck zu bauen.</description>
+      <content:encoded><![CDATA[]]>
+Ich erkläre euch, warum Najeela so stark ist und wie ihr ein Najeela-Tempo-Deck bauen könnt.
+Außerdem erfahrt ihr, wie die Strategie des Decks ist, wie man es besiegt und wann man Mulligans nehmen sollte.
+Achtung: Für schwächere Spielgruppen kann Najeela zu stark sein. In diesem Fall empfehle ich euch, das Manacrypt, die Tutoren und einige oder alle der Combopieces durch langsamere Karten, zum Beispiel größere Kreaturen, zu ersetzen.
+</content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2019-03-17-najeela.m4a"/>
+      <guid>kirdiemtg-najeela-2019-03-17</guid>
+      <pubDate>17 Mar 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>2562</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Anti-Friedhofskarten: Gravehate für Commander</title>
+      <description>Der Friedhof ist eine extrem wichtige Zone im Commander und Anti-Friedhofskarten sind oft spielentscheidend. Ich erkläre euch, welche Optionen ihr habt und wie ihr herausfindet, welche dieser Karten die besten für euer Deck sind!</description>
+      <!--<content:encoded><![CDATA[]]></content:encoded>-->
+      <enclosure type="audio/mp4" url="https://konradhoeffner.de/kirdiemtg/2019-01-02-gravehate.m4a"/>
+      <guid>kirdiemtg-gravehate-2019-01-02</guid>
+      <pubDate>02 Jan 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>1027</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Muldrotha Reanimator Combo</title>
+      <description>Muldrotha die Gräberflut in einer starken Reanimator-Combo-Variante</description>
+      <content:encoded><![CDATA[
+        <a href="https://www.moxfield.com/decks/y7j4LlPLWUux1s0iKSm4tg">Deckliste</a/>
+	  ]]></content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2019-01-02-muldrotha.m4a"/>
+      <guid>kirdiemtg-muldrotha-2019-01-02</guid>
+      <pubDate>02 Jan 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>2246</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
