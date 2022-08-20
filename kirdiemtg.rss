@@ -19,6 +19,21 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Zur der Verzauberer Voltron Kontrolle</title>
+      <description>MTG Commander Deck mit Zur dem Verzauberer mit Fokus auf Kontrolle und das Verstärken des Commanders durch Auren</description>
+      <content:encoded><![CDATA[Das Deck ist inspiriert von Franz Z.s Evil Zur Deck sowie vom <a href="https://tappedout.net/mtg-decks/control-zur-1/">kompetitiven Control Zur Primer von mmcgeach (Englisch)</a>.
+	  ]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2019-07-05-zur.m4a"/>
+      <guid>kirdiemtg-zur-2019-07-05</guid>
+      <pubDate>05 Jul 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>1752</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>4</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Tasigur, der goldene Giftzahn</title>
@@ -38,7 +53,7 @@
       <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>3</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <title>Najeela, the Blade-Blossom Tempo Deck</title>
+      <title>Najeela, die Klingenblüte Tempodeck</title>
       <description>Najeela ist eine der stärksten Commanderinnen überhaupt und bietet mit ihrer Fähigkeit die seltene Möglichkeit, ein starkes Tempo-Deck zu bauen.</description>
       <content:encoded><![CDATA[]]>
 Ich erkläre euch, warum Najeela so stark ist und wie ihr ein Najeela-Tempo-Deck bauen könnt.
