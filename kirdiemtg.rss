@@ -19,16 +19,62 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>10</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Wie ihr Boardwipes überlebt</title>
+      <description>Was ihr gegen Kreaturenboardwipes im Commander unternehmen könnt</description>
+      <content:encoded><![CDATA[]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2022-07-30-antiboardwipe.m4a"/>
+      <guid>kirdiemtg-antiboardwipe-2022-07-30</guid>
+      <pubDate>30 Jul 2022 12:00:00 GMT</pubDate>
+      <itunes:duration>1720</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>9</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Yuriko, Schatten des Tigers</title>
+      <description>MTG Commander: Yuriko, Schatten des Tigers</description>
+      <content:encoded><![CDATA[Die Deckliste findet ihr <a href="https://www.moxfield.com/decks/ZP_ltpl2HUyCZwOzpCXgWw">hier</a>.
+Falls ihr kompetitiv Yuriko spielen wollt,
+empfehle ich euch stattdessen den <a href="https://discord.gg/z443phz">Discord Server</a>,
+<a href="https://www.moxfield.com/decks/N1VNylbgskmYWa09r26ygQ/">diese Deckliste</a> und den <a href="https://www.dropbox.com/s/rjb3lagm8s6vw0t/Yuriko%20Primer%201.1.pdf?dl=0.">Primer von wizard adept</a>.
+Falls ihr selbst Magic-Videos produzieren möchtet, kann ich euch die <a href="https://konradhoeffner.github.io/mtgslides">Software zum automatischen Erstellen von Slideshows</a> empfehlen, die ich für dieses Video programmiert habe.]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2021-12-31-yuriko.m4a"/>
+      <guid>kirdiemtg-yuriko-2021-12-31</guid>
+      <pubDate>31 Dec 2021 12:00:00 GMT</pubDate>
+      <itunes:duration>2250</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>8</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Lange nicht Commander gespielt? Das ist neu! (2021)</title>
+      <description>Welche guten neuen MTG Commander Karten sind 2019--2021 dazugekommen?</description>
+      <content:encoded><![CDATA[]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2021-05-16-neu.m4a"/>
+      <guid>kirdiemtg-neu-2021-05-16</guid>
+      <pubDate>16 May 2021 12:00:00 GMT</pubDate>
+      <itunes:duration>2718</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>7</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Chulane, Teller of Tales </title>
       <description>MTG Commander Deck mit Chulane, Teller of Tales</description>
       <content:encoded><![CDATA[]]>
 	  </content:encoded>
-      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2020-01-18.zur.m4a"/>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2020-01-18-zur.m4a"/>
       <guid>kirdiemtg-zur-2020-01-18</guid>
       <pubDate>18 Jan 2020 12:00:00 GMT</pubDate>
-      <itunes:duration></itunes:duration>
+      <itunes:duration>1752</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
     <item>
