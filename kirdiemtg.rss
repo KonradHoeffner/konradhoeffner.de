@@ -19,6 +19,20 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>11</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Wie ihr Länderdecks besiegt</title>
+      <description>Ich beantworte die Hörerfrage von Florian: "Was tun gegen Decks mit extra Land drops?"</description>
+      <content:encoded><![CDATA[]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2022-08-27-antiland.m4a"/>
+      <guid>kirdiemtg-antiland-2022-08-27</guid>
+      <pubDate>27 Aug 2022 12:00:00 GMT</pubDate>
+      <itunes:duration></itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>10</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Wie ihr Boardwipes überlebt</title>
