@@ -19,6 +19,20 @@
     <itunes:explicit>false</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>13</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Das ist neu 2021 und 2022</title>
+      <description>Die wichtigsten neuen Commanderkarten der Jahre 2021 und 2022</description>
+      <content:encoded><![CDATA[<a href="https://konradhoeffner.de/kirdiemtg/2021-05-16-neu.m4a">Vorgängerepisode mit neuen Karten 2019 bis Mitte 2021</a>]]>
+	  </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2022-10-05-new2022.m4a"/>
+      <guid>kirdiemtg-new2022-2022-10-05</guid>
+      <pubDate>05 Oct 2022 12:00:00 GMT</pubDate>
+      <itunes:duration>8054</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    <item>
+    </item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>12</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Magda, tollkühne Banditin</title>
@@ -28,8 +42,7 @@
       <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2022-09-14-magda.m4a"/>
       <guid>kirdiemtg-magda-2022-09-14</guid>
       <pubDate>14 Sep 2022 12:00:00 GMT</pubDate>
-      <itunes:duration></itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
+      <itunes:duration>3840</itunes:duration>
     </item>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
