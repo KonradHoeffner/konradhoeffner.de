@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<title>shell scripts - Konrad Höffner's private homepage</title>
-<link rel=stylesheet href=css/screen.css>
-<head></head>
-<body>
-<h1>Shell Scripts</h1>
-<section>
-<a name=“boundingbox“><h2>Multiple Images Bounding Box</h2></a>
-<code><pre>
+  <meta charset="UTF-8" />
+  <title>shell scripts - Konrad Höffner's private homepage</title>
+  <link rel=stylesheet href=css/screen.css>
+  <head></head>
+  <body>
+    <h1>Shell Scripts</h1>
+    <section>
+      <a name="“boundingbox“"><h2>Multiple Images Bounding Box</h2></a>
+      <code>
+        <pre>
 #!/bin/bash
 # calculates the bounding box of a set of images given by their filename
 # needs ImageMagick installed on your system (already installed in Ubuntu, download at http://www.imagemagick.org/script/index.php).
@@ -18,7 +19,9 @@ dimensions=$(xargs identify | cut -d " " -f3 | tr 'x'  ' ');
 max_width=$( echo "$dimensions" | cut -f1 -d " " | sort -n -r | head -1)
 max_height=$(echo "$dimensions" | cut -f2 -d " " | sort -n -r | head -1)
 echo "$max_width" "$max_height"
-</pre></code>
-</section>
-</body>
+</pre
+        >
+      </code>
+    </section>
+  </body>
 </html>

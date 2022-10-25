@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<head>
- <title>Konrad Höffner | Projects</title>
- <link rel=stylesheet href=css/screen.css>
- <script src="js/projects.js"></script>
- <style type="text/css">
-  .left
-  {
-   width: 60%;
-  }
-  .right
-  {
-   width: 40%;
-  }
- </style>
-</head>
-<body>
-<header>
-<div class="main">
-<h2>Funded Research Projects</h2>
-<section>
-<table>
-<tr>
- <th class="left"></th>
- <th class="right"></th>
-</tr>
-<script>
-for(project of projects)
-{
-document.write("<tr><td>");
-document.write(`<h2>${project.name}</h2>`);
-document.write(`${project.description}<br>`);
-document.write(`<br><a href="${project.href}" target="_blank">Project Homepage</a>`);
-document.write("</td>");
-document.write(`<td><img src="${project.img}"/></td></tr>`);
-}
-</script>
-</table>
-</section>
-</div>
-</body>
+  <meta charset="UTF-8" />
+  <head>
+    <title>Konrad Höffner | Projects</title>
+    <link rel=stylesheet href=css/screen.css>
+    <script src="js/projects.js"></script>
+    <style type="text/css">
+      .left {
+        width: 60%;
+      }
+      .right {
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h2>Funded Research Projects</h2>
+      </header>
+      <section>
+        <table>
+          <tr>
+            <th class="left"></th>
+            <th class="right"></th>
+          </tr>
+          <script>
+            for (project of projects) {
+              document.write("<tr><td>");
+              document.write(`<h2>${project.name}</h2>`);
+              document.write(`${project.description}<br>`);
+              document.write(`<br><a href="${project.href}" target="_blank">Project Homepage</a>`);
+              document.write("</td>");
+              document.write(`<td><img src="${project.img}"/></td></tr>`);
+            }
+          </script>
+        </table>
+      </section>
+    </div>
+  </body>
 </html>

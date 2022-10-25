@@ -1,96 +1,169 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<head>
-<title>Javascript Image Changer - Konrad Höffner's Private Homepage</title>
-<link rel=stylesheet href=css/screen.css>
-<link rel=stylesheet href=css/imagechanger-sidearrows_ie7.css>
-<!--<link rel=stylesheet href=css/imagechanger-debug.css>-->
-<script src="js/imagechanger.js"></script>
-</head>
-<body>
-<h1>Image Changer</h1>
-<abstract>
-ImageChanger is a simple open source Java Script image changer. It does not preload the images, saving you bandwith and it does not need any external libraries. I created this for an onlineshop but I put this on my homepage in case someone else can use it.
-</abstract>
-<section>
-<h2>Try it out!</h2>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <head>
+    <title>Javascript Image Changer - Konrad Höffner's Private Homepage</title>
+    <link rel=stylesheet href=css/screen.css> <link rel=stylesheet href=css/imagechanger-sidearrows_ie7.css>
+    <!--<link rel=stylesheet href=css/imagechanger-debug.css>-->
+    <script src="js/imagechanger.js"></script>
+  </head>
+  <body>
+    <h1>Image Changer</h1>
+    <abstract>
+      ImageChanger is a simple open source Java Script image changer. It does not preload the images, saving you
+      bandwith and it does not need any external libraries. I created this for an onlineshop but I put this on my
+      homepage in case someone else can use it.
+    </abstract>
+    <section>
+      <h2>Try it out!</h2>
 
-<script>
-//insertImageChanger('changer1',['img/numbers/1.jpg','img/numbers/2.jpg','img/numbers/3.jpg','img/numbers/4.jpg','img/numbers/5.jpg','img/numbers/6.jpg','img/numbers/7.jpg','img/numbers/8.jpg','img/numbers/9.jpg','img/numbers/10.jpg'],424,448);
-insertImageChanger('changer2',['img/sedruck/dk01_thumbnail.png','img/sedruck/dk02_thumbnail.png','img/sedruck/dk03_thumbnail.png','img/sedruck/dk04_thumbnail.png'],['img/sedruck/dk01.png','img/sedruck/dk02.png','img/sedruck/dk03.png','img/sedruck/dk04.png']);
-insertImageChanger('changer3',['img/sedruck/dk01.png','img/sedruck/dk02.png']);
-</script>
-</section>
-<section>
-<h2>Installation</h2>
-Just copy <a href="js/imagechanger.js">imagechanger.js</a> and <a href=css/imagechanger-sidearrows.css>imagechanger-sidearrows.css</a> into your web application.
-</section>
-<section>
-<h2>Usage</h2>
-<h3>Basic Usage</h3>
-<ol>
-<li>Include <a href="js/imagechanger.js">imagechanger.js</a> and <a href=css/imagechanger-sidearrows.css>imagechanger-sidearrows.css</a> in your web page.
-<p><code>
-&lt;head&gt;<br/>&hellip;<br/>
-&lt;link rel=stylesheet href=css/imagechanger-sidearrows.css&gt;<br/>
-&lt;script src=&quot;js/imagechanger.js&quot;&gt;&lt;/script&gt;<br/>
-&lt;/head&gt;</code></p></li>
-<li>
-At the place you want to insert your image, call
-<p><code>
-&lt;script>insertImageChanger('name',['image1.jpg','image2.jpg',&hellip;],link);&lt;/script>
-</code></p>
-The <em>link</em> parameter specifies an <em>a href</em>-target around the image container but can be set to <em>null</em> or just be left out if you don't want to have a link around it.
-</li>
-</ol>
-That's it!
-<h3>Using images with different sizes</h3>
-Because ImageChanger does not preload, it cannot know the image sizes in advance.
-This may lead to elements of your page jumping around, if the image sizes are not equal.
-To prevent this, you need to determine the maximum width and height of your images and then call
-<p><code>
-&lt;script>insertImageChanger('name',['image1.jpg','image2.jpg',&hellip;],width,height,link);&lt;/script>
-</code></p>
-If you work with Linux, you can use my <a href="shellscripts.html#boundingbox"><em>Multiple Images Bounding Box</em>-shell script.</a>
-<section>
-<h2>Building your own image changer</h2>
-If you don't like the design but you still want use the logic you have two possibilities.
-<h3>Change the default css</h3>
-Make a copy of <a href=css/imagechanger-sidearrows.css>imagechanger-sidearrows.css</a> and change the values.
-<h3>Only use the core functions</h3>
-You can create create anything you want, the only necessities for using the ImageChanger are
-<ol>
-<li>Creating an image with a an id "<em>name</em>_img", for example "myimage_img"</li>
-<li>Creating an instance of the type ImageSequence with the name ("myimage" in this case) as a parameter</li>
-<li>Giving some element the property onclick=&quot;<em>sequence</em>.displayPrev()&quot;</li>
-<li>Giving some element the property onclick=&quot;<em>sequence</em>.displayNext()&quot;</li>
-</ol>
-<h4>Example</h4>
-<script>
-var sequence = new ImageSequence('myimage',['img/numbers/1.jpg','img/numbers/2.jpg','img/numbers/3.jpg']);
-</script>
-<div style="background-color:black;color:white" onclick="sequence.displayPrev()">previous</div>
-<div style="background-color:#cccccc;text-align:right;" onclick="sequence.displayNext()">next</div>
-<img id="myimage_img" src="img/numbers/1.jpg" width="10%" height="10%"/>
-<h4>Code</h4>
-<p><code>&lt;script&gt;<br /> <font color="blue">var sequence = new ImageSequence('myimage',['img/numbers/1.jpg','img/numbers/2.jpg','img/numbers/3.jpg']);</font><br /> &lt;/script&gt;<br /> &lt;div style=&quot;background-color:black;color:white&quot; <font color="blue">onclick=&quot;sequence.displayPrev()&quot;</font>&gt;previous&lt;/div&gt;<br /> &lt;div style=&quot;background-color:#cccccc;text-align:right;&quot; <font color="blue">onclick=&quot;sequence.displayNext()&quot;</font>&gt;next&lt;/div&gt;<br /> &lt;img <font color="blue">id=&quot;myimage_img&quot;</font> src=&quot;img/numbers/1.jpg&quot; width=&quot;10%&quot; height=&quot;10%&quot;/&gt;
-</code></p>
-
-</section>
-
-</section>
-<!--
+      <script>
+        //insertImageChanger('changer1',['img/numbers/1.jpg','img/numbers/2.jpg','img/numbers/3.jpg','img/numbers/4.jpg','img/numbers/5.jpg','img/numbers/6.jpg','img/numbers/7.jpg','img/numbers/8.jpg','img/numbers/9.jpg','img/numbers/10.jpg'],424,448);
+        insertImageChanger(
+          "changer2",
+          [
+            "img/sedruck/dk01_thumbnail.png",
+            "img/sedruck/dk02_thumbnail.png",
+            "img/sedruck/dk03_thumbnail.png",
+            "img/sedruck/dk04_thumbnail.png",
+          ],
+          ["img/sedruck/dk01.png", "img/sedruck/dk02.png", "img/sedruck/dk03.png", "img/sedruck/dk04.png"]
+        );
+        insertImageChanger("changer3", ["img/sedruck/dk01.png", "img/sedruck/dk02.png"]);
+      </script>
+    </section>
+    <section>
+      <h2>Installation</h2>
+      Just copy
+      <a href="js/imagechanger.js">imagechanger.js</a>
+      and
+      <a href="css/imagechanger-sidearrows.css">imagechanger-sidearrows.css</a>
+      into your web application.
+    </section>
+    <section>
+      <h2>Usage</h2>
+      <h3>Basic Usage</h3>
+      <ol>
+        <li>
+          Include
+          <a href="js/imagechanger.js">imagechanger.js</a>
+          and
+          <a href="css/imagechanger-sidearrows.css">imagechanger-sidearrows.css</a>
+          in your web page.
+          <p>
+            <code>
+              &lt;head&gt;
+              <br />
+              &hellip;
+              <br />
+              &lt;link rel=stylesheet href=css/imagechanger-sidearrows.css&gt;
+              <br />
+              &lt;script src=&quot;js/imagechanger.js&quot;&gt;&lt;/script&gt;
+              <br />
+              &lt;/head&gt;
+            </code>
+          </p>
+        </li>
+        <li>
+          At the place you want to insert your image, call
+          <p>
+            <code>&lt;script>insertImageChanger('name',['image1.jpg','image2.jpg',&hellip;],link);&lt;/script></code>
+          </p>
+          The
+          <em>link</em>
+          parameter specifies an
+          <em>a href</em>
+          -target around the image container but can be set to
+          <em>null</em>
+          or just be left out if you don't want to have a link around it.
+        </li>
+      </ol>
+      That's it!
+      <h3>Using images with different sizes</h3>
+      Because ImageChanger does not preload, it cannot know the image sizes in advance. This may lead to elements of
+      your page jumping around, if the image sizes are not equal. To prevent this, you need to determine the maximum
+      width and height of your images and then call
+      <p>
+        <code>
+          &lt;script>insertImageChanger('name',['image1.jpg','image2.jpg',&hellip;],width,height,link);&lt;/script>
+        </code>
+      </p>
+      If you work with Linux, you can use my
+      <a href="shellscripts.html#boundingbox">
+        <em>Multiple Images Bounding Box</em>
+        -shell script.
+      </a>
+      <section>
+        <h2>Building your own image changer</h2>
+        If you don't like the design but you still want use the logic you have two possibilities.
+        <h3>Change the default css</h3>
+        Make a copy of
+        <a href="css/imagechanger-sidearrows.css">imagechanger-sidearrows.css</a>
+        and change the values.
+        <h3>Only use the core functions</h3>
+        You can create create anything you want, the only necessities for using the ImageChanger are
+        <ol>
+          <li>
+            Creating an image with a an id "
+            <em>name</em>
+            _img", for example "myimage_img"
+          </li>
+          <li>Creating an instance of the type ImageSequence with the name ("myimage" in this case) as a parameter</li>
+          <li>
+            Giving some element the property onclick=&quot;
+            <em>sequence</em>
+            .displayPrev()&quot;
+          </li>
+          <li>
+            Giving some element the property onclick=&quot;
+            <em>sequence</em>
+            .displayNext()&quot;
+          </li>
+        </ol>
+        <h4>Example</h4>
+        <script>
+          var sequence = new ImageSequence("myimage", ["img/numbers/1.jpg", "img/numbers/2.jpg", "img/numbers/3.jpg"]);
+        </script>
+        <div style="background-color: black; color: white" onclick="sequence.displayPrev()">previous</div>
+        <div style="background-color: #cccccc; text-align: right" onclick="sequence.displayNext()">next</div>
+        <img id="myimage_img" src="img/numbers/1.jpg" width="10%" height="10%" />
+        <h4>Code</h4>
+        <p>
+          <code>
+            &lt;script&gt;
+            <br />
+            <font color="blue">
+              var sequence = new ImageSequence('myimage',['img/numbers/1.jpg','img/numbers/2.jpg','img/numbers/3.jpg']);
+            </font>
+            <br />
+            &lt;/script&gt;
+            <br />
+            &lt;div style=&quot;background-color:black;color:white&quot;
+            <font color="blue">onclick=&quot;sequence.displayPrev()&quot;</font>
+            &gt;previous&lt;/div&gt;
+            <br />
+            &lt;div style=&quot;background-color:#cccccc;text-align:right;&quot;
+            <font color="blue">onclick=&quot;sequence.displayNext()&quot;</font>
+            &gt;next&lt;/div&gt;
+            <br />
+            &lt;img
+            <font color="blue">id=&quot;myimage_img&quot;</font>
+            src=&quot;img/numbers/1.jpg&quot; width=&quot;10%&quot; height=&quot;10%&quot;/&gt;
+          </code>
+        </p>
+      </section>
+    </section>
+    <!--
 <div style="height:500px;border: 1px solid;">
 <table style="border: 1px solid;"><tr><td>
 <img src="img/numbers/1.jpg" style=""/>
 </td></tr></table>
 </div>-->
 
-<!--<div class="imagesequence-container">
+    <!--<div class="imagesequence-container">
 <div class="imagesequence-prev"><img src="img/arrow_left.png"/></div>
 <div class="imagesequence-next"><img src="img/arrow_right.png"/></div>
 <div class="imagesequence-image"><img src="img/numbers/1.jpg"/></div>
 </div>-->
-
-</body>
+  </body>
 </html>

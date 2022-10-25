@@ -1,36 +1,37 @@
- <!doctype html>
-   <html>
-     <head>
-       <meta charset="utf-8">
-       <title>Borland Pascal 2D Shooter</title>
-       <style type="text/css">
-	 body {background-color: #222222;}
-         .dosbox-canvas
-	 {
-	  width: 1280px;
-	  height: 800px;
-	  margin-left: auto;
-	  margin-right: auto;
-	  display: block;
-	 }
-       </style>
-     </head>
-     <body>
-       <div id="dosbox"></div>
-       <br/>
-       <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
-       
-       <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
-       <script type="text/javascript">
-         var dosbox = new Dosbox({
-           id: "dosbox",
-           onload: function (dosbox) {
-             dosbox.run("cats.zip", "./katze.exe");
-           },
-           onrun: function (dosbox, app) {
-             console.log("App '" + app + "' is runned");
-           }
-         });
-       </script>
-     </body>
-   </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Borland Pascal 2D Shooter</title>
+    <style type="text/css">
+      body {
+        background-color: #222222;
+      }
+      .dosbox-canvas {
+        width: 1280px;
+        height: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dosbox"></div>
+    <br />
+    <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
+
+    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+    <script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          dosbox.run("cats.zip", "./katze.exe");
+        },
+        onrun: function (dosbox, app) {
+          console.log("App '" + app + "' is runned");
+        },
+      });
+    </script>
+  </body>
+</html>

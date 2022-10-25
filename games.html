@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<head>
- <title>Konrad Höffner | Games</title>
- <link rel=stylesheet href=css/screen.css>
- <script src="js/games.js"></script>
- <style type="text/css">
-  .left
-  {
-   width: 600px;
-  }
-  .right
-  {
-   width: 40%;
-  }
+  <meta charset="UTF-8" />
+  <head>
+    <title>Konrad Höffner | Games</title>
+    <link rel=stylesheet href=css/screen.css>
+    <script src="js/games.js"></script>
+    <style type="text/css">
+      .left {
+        width: 600px;
+      }
+      .right {
+        width: 40%;
+      }
 
-  img
-  {
-   max-width:100%;
-   object-fit: contain;
-   min-width:640px;
-   min-height:400px;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  }
- </style>
-</head>
-<body>
-<header>
-<div class="main">
-<section>
-<table>
-<tr>
- <th class="left"></th>
- <th class="right"></th>
-</tr>
-<script>
-for(game of games)
-{
-document.write("<tr><td>");
-document.write(`<h2>${game.name} (${game.year})</h2>`);
-document.write(`${game.description}<br>`);
-document.write(`<br><a href="${game.href}" target="_blank">Play</a>`);
-document.write("</td>");
-document.write(`<td><img src="${game.img}"/></td></tr>`);
-}
-</script>
-</table>
-</section>
-</div>
-</body>
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        min-width: 640px;
+        min-height: 400px;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section>
+        <table>
+          <tr>
+            <th class="left"></th>
+            <th class="right"></th>
+          </tr>
+          <script>
+            for (game of games) {
+              document.write("<tr><td>");
+              document.write(`<h2>${game.name} (${game.year})</h2>`);
+              document.write(`${game.description}<br>`);
+              document.write(`<br><a href="${game.href}" target="_blank">Play</a>`);
+              document.write("</td>");
+              document.write(`<td><img src="${game.img}"/></td></tr>`);
+            }
+          </script>
+        </table>
+      </section>
+    </div>
+  </body>
 </html>
