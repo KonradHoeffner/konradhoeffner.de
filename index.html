@@ -9,6 +9,8 @@
     <meta name="dc.identifier" content="http://konradhoeffner.de/" />
     <meta name="dc.language" content="en" />
     <link rel=stylesheet href=css/screen.css>
+    <script src="js/links.js"></script>
+    <script src="js/projects.js"></script>
   </head>
   <body>
     <center>
@@ -38,8 +40,8 @@
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-			<!--<li><a href="publications.html">Publications</a></li>-->
-            <li><a href="projects.html">Projects</a></li>
+            <!--<li><a href="publications.html">Publications</a></li>-->
+            <!--<li><a href="projects.html">Projects</a></li>-->
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="https://github.com/KonradHoeffner" target="_blank">GitHub</a></li>
@@ -60,36 +62,33 @@
  
  </div>-->
       </header>
-<style>
-.item
-{
-  width: 10em;
-  min-width: 10em;
-  text-align: center;
-}
-.item a figure
-{
-  margin: auto; 
-}
-.logo
-{
-  margin: auto;
-  width: 8em;
-  min-height: 8em;
-}
-</style>
+      <style>
+        .item {
+          width: 10em;
+          min-width: 10em;
+          text-align: center;
+        }
+        .item a figure {
+          margin: auto;
+        }
+        .logo {
+          margin: auto;
+          width: 8em;
+          min-height: 8em;
+        }
+      </style>
       <div class="main">
         <section>
-        <div style="display:flex">
-          <div class="item"><a href="https://github.com/KonradHoeffner" target="_blank"><figure><img class="logo"src="img/logo/github.svg"><figcaption>GitHub</figcaption></figure></a></div>
-          <div class="item"><a href="https://scholar.google.com/citations?user=siUC0VsAAAAJ" target="_blank"><figure><img class="logo"src="img/logo/googlescholar.svg"><figcaption>Google Scholar</figcaption></figure></a></div>
-          <div class="item"><a href="" target="_blank"><figure><img class="logo"src="img/logo/cubeqa-notext.svg"><figcaption>CubeQA</figcaption></figure></a></div>
-          <div class="item"><a href="https://www.youtube.com/channel/UCftM5Epe2r2DXiqiUWG5HAA/videos" target="_blank"><figure><img class="logo"src="img/logo/kirdiemtg.jpg"><figcaption>German Magic Commander YouTube</figcaption></figure></a></div>
-          <div class="item"><a href="https://podcasts.google.com/feed/aHR0cHM6Ly9rb25yYWRob2VmZm5lci5kZS9raXJkaWVtdGcucnNz?sa=X&ved=0CAIQ9sEGahcKEwjw1t7xlvv6AhUAAAAAHQAAAAAQGg" target="_blank"><figure><img class="logo"src="img/logo/kirdiemtg.jpg"><figcaption>German Magic Commander Podcast</figcaption></figure></a></div>
-          <div class="item"><a href="" target="_blank"><figure><img class="logo"src="img/logo/sonnenkinder.jpg"><figcaption>German fairy tales with my kids</figcaption></figure></a></div>
-		  <!--<div class="item"><a href="" target="_blank"><figure><img class="logo"src="img/"><figcaption></figcaption></figure></a></div>-->
-        </div>
-    </section>
+          <div style="display: flex">
+            <script>
+              for (let link of links) {
+                document.write(
+                  `<div class="item"><a href="${link.href}" target="_blank"><figure><img class="logo" src="${link.logo}"><figcaption>${link.name}</figcaption></figure></a></div>`
+                );
+              }
+            </script>
+          </div>
+        </section>
       </div>
     </center>
   </body>
