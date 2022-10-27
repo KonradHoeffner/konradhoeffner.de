@@ -11,6 +11,27 @@
     <link rel=stylesheet href=css/screen.css>
     <script src="js/links.js"></script>
     <script src="js/projects.js"></script>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        align-items: center;
+      }
+      .item {
+        width: 12em;
+        min-width: 12em;
+        text-align: center;
+      }
+      .item a figure {
+        margin: auto;
+      }
+      .logo {
+        margin: auto;
+        width: 10em;
+        min-height: 4em;
+      }
+    </style>
   </head>
   <body>
     <center>
@@ -62,28 +83,26 @@
  
  </div>-->
       </header>
-      <style>
-        .item {
-          width: 10em;
-          min-width: 10em;
-          text-align: center;
-        }
-        .item a figure {
-          margin: auto;
-        }
-        .logo {
-          margin: auto;
-          width: 8em;
-          min-height: 8em;
-        }
-      </style>
       <div class="main">
         <section>
-          <div style="display: flex">
+          <div class="container">
+            <div class="item"><h2>Links</h2></div>
             <script>
               for (let link of links) {
                 document.write(
                   `<div class="item"><a href="${link.href}" target="_blank"><figure><img class="logo" src="${link.logo}"><figcaption>${link.name}</figcaption></figure></a></div>`
+                );
+              }
+            </script>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="item"><h2>Research Projects</h2></div>
+            <script>
+              for (let project of projects) {
+                document.write(
+                  `<div class="item"><a href="${project.href}" target="_blank"><figure><img class="logo" src="${project.logo}"><figcaption>${project.name}</figcaption></figure></a></div>`
                 );
               }
             </script>

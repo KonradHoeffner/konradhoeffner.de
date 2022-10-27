@@ -8,6 +8,12 @@ const links = [
     year: 2022,
   },
   {
+    href: "https://nbn-resolving.org/urn:nbn:de:bsz:15-qucosa2-742429",
+    logo: "img/logo/cubeqa-notext.svg",
+    name: "PhD Thesis",
+    year: 2020,
+  },
+  {
     href: "https://github.com/konradhoeffner/cubeqa",
     logo: "img/logo/cubeqa-notext.svg",
     name: "CubeQA",
