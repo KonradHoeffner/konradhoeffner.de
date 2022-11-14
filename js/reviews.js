@@ -6,4 +6,5 @@ var reviews = {
   2015: ["SWJ", "KESW"],
   2016: ["SWJ"],
   2017: ["CSUBS", "KESW", "NLIWoD3"],
+  2022: ["JOSS"],
 };
