@@ -20,6 +20,20 @@
     <itunes:explicit>no</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>14</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Legacy UR Delver Teil 1: Der Kern des Decks </title>
+      <description>Der erste Teil eines Guides für das Legacy UR Delver Deck</description>
+      <content:encoded><![CDATA[]]>
+      </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2023-02-26-delver.m4a" length="65544231"/>
+      <guid>https://konradhoeffner.de/kirdiemtg/2023-02-26-delver.m4a</guid>
+      <pubDate>26 Feb 2026 18:00:00 GMT</pubDate>
+      <itunes:duration>4052</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>13</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Das ist neu 2021 und 2022</title>
