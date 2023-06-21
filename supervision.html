@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <head>
+    <title>Konrad Höffner | Supervision</title>
+    <link rel=stylesheet href=css/screen.css>
+    <script src="js/supervision.js"></script>
+    <style type="text/css">
+      .left {
+        width: 60px;
+      }
+      .right {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        I have supervised the following German bachelor's and master's theses as well as exceptional academic achievements (Besondere Lernleistungen):
+      </header>
+      <section>
+        <table>
+          <tr>
+            <th>Year</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th></th>
+          </tr>
+          <script>
+            for (s of supervision) {
+              document.write("<tr>");
+              document.write(`<td>${s.year}</td>`);
+              document.write(`<td>${s.name}</td>`);
+              document.write(`<td><i>${s.title}</i></td>`);
+              document.write(`<td>${s.type}</td>`);
+              document.write(`<td><a href="${s.link}">Download</a></td>`);
+              document.write("</tr>");
+            }
+          </script>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
