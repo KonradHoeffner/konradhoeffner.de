@@ -20,6 +20,20 @@
     <itunes:explicit>no</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>15</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Legacy Grixis Delver</title>
+      <description>Einsteigerguides für das Legacy Grixis Delver Deck</description>
+      <content:encoded><![CDATA[]]>
+      </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2023-08-20-grixisdelver.m4a" length="85074365"/>
+      <guid>https://konradhoeffner.de/kirdiemtg/2023-08-20-grixisdelver.m4a</guid>
+      <pubDate>20 Aug 2023 18:00:00 GMT</pubDate>
+      <itunes:duration>3495</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>14</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Legacy UR Delver Teil 1: Der Kern des Decks </title>
@@ -28,7 +42,7 @@
       </content:encoded>
       <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2023-02-26-delver.m4a" length="65544231"/>
       <guid>https://konradhoeffner.de/kirdiemtg/2023-02-26-delver.m4a</guid>
-      <pubDate>26 Feb 2026 18:00:00 GMT</pubDate>
+      <pubDate>26 Feb 2023 18:00:00 GMT</pubDate>
       <itunes:duration>4052</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
     </item>
