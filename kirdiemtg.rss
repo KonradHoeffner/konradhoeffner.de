@@ -20,6 +20,20 @@
     <itunes:explicit>no</itunes:explicit>
     <item>
       <itunes:author>Konrad Höffner</itunes:author>
+      <itunes:episode>16</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <title>Legacy Questing Druid RUG Delver</title>
+      <description>Kurzeinführung in die neue Legacy RUG Delver Variante mit Questing Druid</description>
+      <content:encoded><![CDATA[]]>
+      </content:encoded>
+      <enclosure type="audio/m4a" url="https://konradhoeffner.de/kirdiemtg/2023-10-01-druiddelver.m4a" length="27720064"/>
+      <guid>https://konradhoeffner.de/kirdiemtg/2023-10-01-druiddelver.m4a</guid>
+      <pubDate>01 Oct 2023 15:15:00 GMT</pubDate>
+      <itunes:duration>1367</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+    <item>
+      <itunes:author>Konrad Höffner</itunes:author>
       <itunes:episode>15</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <title>Legacy Grixis Delver</title>
