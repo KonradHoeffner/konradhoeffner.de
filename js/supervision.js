@@ -1,5 +1,5 @@
 var supervision = [
-  {name: "Paul Keller", type: "master's thesis", year: 2023, title: "Question Answering auf dem Lehrbuch 'Health Information Systems' mit Hilfe von unüberwachtem Training eines Pretrained Transformers (working title)", link: ""},
+  {name: "Paul Keller", type: "master's thesis", year: 2023, title: "Question Answering auf dem Lehrbuch 'Health Information Systems' mit Hilfe von unüberwachtem Training eines Pretrained Transformers", link: "https://nbn-resolving.org/urn:nbn:de:bsz:15-qucosa2-882749"},
   {name: "Andreea Somesan", type: "master's thesis", year: 2023, title: "Optimierung der Navigation in einer Ontologie zur Beschreibung von Anwendungssystemen und Softwareprodukten im Gesundheitswesen", link: "https://hitontology.eu/public/studenttheses/Masterarbeit_Andreea_Somesan.pdf"},
   {name: "Arne Roszeitis", type: "bachelor's thesis", year: 2022, title: "Automatische Generierung komplexer Fragen zum Informationsmanagement auf der Basis der SNIK-Ontologie", link: "https://www.snik.eu/public/bachelor-ar.pdf"},
   {name: "Hannes Raphael Brunsch", type: "Besondere Lernleistung", year: 2022, title: "Question Answering auf SNIK", link: "https://www.snik.eu/public/bell-hrb.pdf"},
