@@ -34,7 +34,7 @@ const links = [
     year: 2022,
   },
   {
-    href: "https://podcasts.google.com/feed/aHR0cHM6Ly9rb25yYWRob2VmZm5lci5kZS9raXJkaWVtdGcucnNz?sa=X&ved=0CAIQ9sEGahcKEwjw1t7xlvv6AhUAAAAAHQAAAAAQGg",
+    href: "https://pod.link/1640844176",
     logo: "img/logo/kirdiemtg.jpg",
     name: "German Magic Commander Podcast",
     year: 2022,
@@ -42,8 +42,8 @@ const links = [
   {
     href: "https://anchor.fm/sonnenkinder",
     logo: "img/logo/sonnenkinder.jpg",
-    name: "German fairy tales",
-    description: "short German fairy tales recorded with my children",
+    name: "German fairy tales and songs",
+    description: "short German fairy tales and songs recorded with my children",
     year: 2022,
   },
   {
